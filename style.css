@@ -174,9 +174,7 @@ time {
 }
 
 .color-scheme {
-  position: absolute;
-  top: 1rem;      
-  right: 1rem;     
+  position: absolute;     
   font-family: inherit;
   border-radius: 5px;
 }
