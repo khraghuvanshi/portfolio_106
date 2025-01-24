@@ -172,3 +172,14 @@ time {
   font-style: italic;
   color: #666;
 }
+
+.color-scheme {
+  position: absolute;
+  top: 1rem;      
+  right: 1rem;    
+  z-index: 1000;  
+  font-family: inherit;
+  background-color: white; 
+  padding: 5px;   
+  border-radius: 5px;
+}
