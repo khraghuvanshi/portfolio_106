@@ -16,7 +16,7 @@ function $$(selector, context = document) {
 // }
 
 let pages = [
-    { url: '', title: 'Home' },
+    { url: 'index.html', title: 'Home' },
     { url: 'projects/', title: 'Projects' },
     { url: 'resume.html', title: 'Resume' },
     { url: 'contact/', title: 'Contact' },
@@ -33,7 +33,7 @@ for (let p of pages) {
   let title = p.title;
 
   url = !ARE_WE_HOME && !url.startsWith('http') ? '../' + url : url;
-  
+
   let a = document.createElement('a');
   a.href = url;
   a.textContent = title;
