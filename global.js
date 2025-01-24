@@ -62,11 +62,13 @@ document.body.insertAdjacentHTML(
   `
 );
 
-let select = document.querySelector(selector);
+let select = document.querySelector(".color-scheme select");
 
 select.addEventListener('input', function (event) {
+  let theme = event.target.value;
   console.log('color scheme changed to', event.target.value);
+  document.documentElement.style.setProperty('color-scheme', theme);
 });
-document.documentElement.style.setProperty('color-scheme', event.target.value);
+
 
 
