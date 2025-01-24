@@ -26,7 +26,7 @@ let pages = [
 let nav = document.createElement('nav');
 document.body.prepend(nav);
 
-const ARE_WE_HOME = document.documentElement.classList.contains('home');
+const ARE_WE_HOME = document.documentElement.classList.contains('Home');
 
 for (let p of pages) {
   let url = p.url;
@@ -34,10 +34,12 @@ for (let p of pages) {
 
   url = !ARE_WE_HOME && !url.startsWith('http') ? '../' + url : url;
 
-  let a = document.createElement('a');
-  a.href = url;
-  a.textContent = title;
-  nav.append(a);
+  nav.insertAdjacentHTML('beforeend', `<a href="${url}" target="${url.startsWith('http') ? '_blank' : '_self'}">${title}</a>`);
+
+  // let a = document.createElement('a');
+  // a.href = url;
+  // a.textContent = title;
+  // nav.append(a);
 
 //   nav.insertAdjacentHTML('beforeend', `<a href="${url}" target="${url.startsWith('http') ? '_blank' : '_self'}">${title}</a>`);
 }
