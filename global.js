@@ -39,8 +39,11 @@ for (let p of pages) {
   if (a.host === location.host && a.pathname === location.pathname) {
     a.classList.add('current');
   }
-  a.toggleAttribute('target', a.host !== location.host);
   
+  if (a.host !== location.host) {
+    a.target = '_blank';
+  }
+
   nav.append(a);
 
 }
