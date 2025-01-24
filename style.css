@@ -4,6 +4,27 @@ html {
   accent-color: var(--color-accent); /* Apply it as the default accent color */
 }
 
+@media (prefers-color-scheme: dark) {
+  nav {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: oklch(skyblue/ 40);
+    }
+
+  nav a {
+    color: white; /* Links in white */
+  }
+
+  nav a.current{
+    border-bottom: 0.4em solid rgb(182, 231, 251);
+    padding-bottom: 0.4em
+  }
+
+  nav a:hover {
+    background-color: #376ccf; /* Dark hover background */
+  }
+}
+
 body {
     /* Set line height to 1.5 times the font size
          and use the OS’s UI font as the website font
