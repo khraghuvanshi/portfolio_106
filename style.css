@@ -1,8 +1,5 @@
-:root {
-  color-scheme: dark;
-}
-
 html {
+  color-scheme: dark;
   --color-accent: rgb(78, 192, 241); /* Define the accent color */
   accent-color: var(--color-accent); /* Apply it as the default accent color */
 }
