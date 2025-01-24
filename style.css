@@ -179,7 +179,6 @@ time {
   right: 1rem;    
   z-index: 1000;  
   font-family: inherit;
-  background-color: white; 
-  padding: 5px;   
+  background-color: white;  
   border-radius: 5px;
 }

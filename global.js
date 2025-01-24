@@ -62,4 +62,15 @@ document.body.insertAdjacentHTML(
   `
 );
 
+const select = document.querySelector('#theme-switcher');
+
+// Add event listener to detect when the theme is changed
+select.addEventListener('input', function (event) {
+  // Log the selected theme to the console for debugging
+  console.log('color scheme changed to', event.target.value);
+
+  // Set the color-scheme property on the root element
+  document.documentElement.style.setProperty('color-scheme', event.target.value);
+});
+
 
