@@ -34,10 +34,8 @@ for (let p of pages) {
 
   url = !ARE_WE_HOME && !url.startsWith('http') ? '../' + url : url;
   nav.insertAdjacentHTML('beforeend', `<a href="${url}">${title}</a>`);
-  const ARE_WE_HOME = document.documentElement.classList.contains('home');
-  if (!ARE_WE_HOME && !url.startsWith('http')) {
-    url = '../' + url;
-  }
+  // const ARE_WE_HOME = document.documentElement.classList.contains('home');
+  
 
 
   // let a = document.createElement('a');
