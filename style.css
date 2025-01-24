@@ -23,6 +23,29 @@ html {
   nav a:hover {
     background-color: #376ccf; /* Dark hover background */
   }
+
+  section{
+    grid-template-rows: subgrid;
+    grid-row: span 3;
+    gap: 1em;
+    max-width: 800px;
+    background: rgb(54, 76, 105);
+    padding: 30px;
+    margin: 80px auto 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  article{
+    grid-template-rows: subgrid;
+    grid-row: span 3;
+    gap: 1em;
+    max-width: 800px;
+    background:  rgb(54, 76, 105);
+    padding: 30px;
+    margin: 80px auto 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
 }
 
 body {
