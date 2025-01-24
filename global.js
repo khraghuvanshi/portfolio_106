@@ -64,10 +64,17 @@ document.body.insertAdjacentHTML(
 
 let select = document.querySelector(".color-scheme select");
 
+if ("colorScheme" in localStorage) {
+  let savedTheme = localStorage.colorScheme;
+  document.documentElement.style.setProperty('color-scheme', savedTheme);
+  select.value = savedTheme; // Update the dropdown to match
+}
+
 select.addEventListener('input', function (event) {
   let theme = event.target.value;
   console.log('color scheme changed to', event.target.value);
   document.documentElement.style.setProperty('color-scheme', theme);
+  localStorage.colorScheme = theme;
 });
 
 
