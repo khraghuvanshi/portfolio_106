@@ -19,7 +19,7 @@ let pages = [
     { url: '', title: 'Home' },
     { url: 'projects/', title: 'Projects' },
     { url: 'resume.html', title: 'Resume' },
-    { url: 'contact/index.html', title: 'Contact' },
+    { url: 'contact/', title: 'Contact' },
     { url: 'https://github.com/khraghuvanshi', title: 'GitHub' },
   ];
 
