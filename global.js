@@ -72,7 +72,7 @@ if ("colorScheme" in localStorage) {
 
 select.addEventListener('input', function (event) {
   let theme = event.target.value;
-  console.log('color scheme changed to', event.target.value);
+  console.log('color scheme changed to', theme);
   document.documentElement.style.setProperty('color-scheme', theme);
   localStorage.colorScheme = theme;
 });
