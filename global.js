@@ -96,7 +96,7 @@ export async function fetchJSON(url) {
   }
 }
 
-export function renderProjects(project, containerElement, headingLevel = 'h2') {
+export function renderProjects(projects, containerElement, headingLevel = 'h2') {
 
   if (!containerElement) {
     console.error("Invalid container element.");
@@ -104,12 +104,12 @@ export function renderProjects(project, containerElement, headingLevel = 'h2') {
   }
 
   containerElement.innerHTML = '';
-  if (!Array.isArray(project) || projects.length === 0) {
+  if (!Array.isArray(projects) || projects.length === 0) {
     containerElement.innerHTML = '<p>No projects available.</p>';
     return;
   }
 
-  project.forEach(project => {
+  projects.forEach(project => {
     const article = document.createElement('article');
 
     // Ensuring missing data doesn't break rendering
