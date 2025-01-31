@@ -1,8 +1,8 @@
 [
     {
-        "title": "Lorem ipsum dolor sit.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim vitae omnis porro! Impedit beatae vel, aspernatur, necessitatibus animi illum aperiam quia fugit iusto maxime tempora quis possimus dicta nihil esse!"
+        "title": "PCA Spotify Music Recommendation",
+        "image": "images/proj1",
+        "description": "This project is a Music Recommendation System designed to provide personalized song recommendations based on input criteria. Users can specify the name of a song, the artist, and their preferences for features such as danceability, loudness, and instrumentalness."
     },
     {
         "title": "Classifier Evaluations",
