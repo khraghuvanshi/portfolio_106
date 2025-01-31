@@ -8,4 +8,4 @@ const projectsTitle = document.querySelector('.projects-title');
 
 renderProjects(projects, projectsContainer, 'h2');
 
-projectsTitle.textContent = `Here are my ${projects.length} projects`;
+// projectsTitle.textContent = `Here are my ${projects.length} projects`;
