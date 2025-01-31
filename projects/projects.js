@@ -4,6 +4,8 @@ const projects = await fetchJSON('../lib/projects.json');
 
 const projectsContainer = document.querySelector('.projects');
 
+const projectsTitle = document.querySelector('.projects-title');
+
 renderProjects(projects, projectsContainer, 'h2');
 
-projectsContainer.textContent = `Here are my projects (${projects.length})`;
+projectsTitle.textContent = `Here are my ${projects.length} projects`;
