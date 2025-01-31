@@ -104,12 +104,12 @@ export function renderProjects(project, containerElement, headingLevel = 'h2') {
   }
 
   containerElement.innerHTML = '';
-  if (!Array.isArray(projects) || projects.length === 0) {
+  if (!Array.isArray(project) || projects.length === 0) {
     containerElement.innerHTML = '<p>No projects available.</p>';
     return;
   }
 
-  projects.forEach(project => {
+  project.forEach(project => {
     const article = document.createElement('article');
 
     // Ensuring missing data doesn't break rendering
