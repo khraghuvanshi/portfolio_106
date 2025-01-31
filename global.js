@@ -104,17 +104,38 @@ export function renderProjects(project, containerElement, headingLevel = 'h2') {
   }
 
   containerElement.innerHTML = '';
+  if (!Array.isArray(projects) || projects.length === 0) {
+    containerElement.innerHTML = '<p>No projects available.</p>';
+    return;
+  }
 
   projects.forEach(project => {
     const article = document.createElement('article');
 
+    // Ensuring missing data doesn't break rendering
+    const title = project.title || 'Untitled Project';
+    const image = project.image ? `<img src="${project.image}" alt="${title}">` : '';
+    const description = project.description || 'No description available.';
+
     article.innerHTML = `
-    <h3>${project.title}</h3>
-    <img src="${project.image}" alt="${project.title}">
-    <p>${project.description}</p>`;
+      <${headingLevel}>${title}</${headingLevel}>
+      ${image}
+      <p>${description}</p>
+    `;
+
+    containerElement.appendChild(article);
   });
 
-  containerElement.appendChild(article);
+  // projects.forEach(project => {
+  //   const article = document.createElement('article');
+
+  //   article.innerHTML = `
+  //   <h3>${project.title}</h3>
+  //   <img src="${project.image}" alt="${project.title}">
+  //   <p>${project.description}</p>`;
+  // });
+
+  // containerElement.appendChild(article);
   
 }
 
