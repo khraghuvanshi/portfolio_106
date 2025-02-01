@@ -1,28 +1,28 @@
 [
     {
         "title": "PCA Spotify Music Recommendation",
-        "image": "../images/proj1.png",
+        "image": "https://opengraph.githubassets.com/1/ebeltyukova/PCA_for_Spotify_Recs",
         "description": "This project is a Music Recommendation System designed to provide personalized song recommendations based on input criteria. Users can specify the name of a song, the artist, and their preferences for features such as danceability, loudness, and instrumentalness."
     },
     {
         "title": "Classifier Evaluations",
-        "image": "../images/proj2.png",
+        "image": "https://opengraph.githubassets.com/1/khraghuvanshi/classifier_evaluations",
         "description": "This project compares the performance of six supervised learning classifiers—Random Forest, Decision Tree, K-Nearest Neighbors (KNN), Naive Bayes, Support Vector Machine (SVM), and Logistic Regression—on binary classification tasks using three datasets from the UCI Machine Learning Repository."
     },
     {
-        "title": "Sequi harum excepturi voluptate?",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Repellendus, excepturi voluptatibus. Repudiandae similique illo mollitia culpa sit minus laboriosam, delectus ad! Odit expedita cupiditate doloremque placeat velit eligendi magnam ab vel reprehenderit, molestias, ducimus, explicabo quas neque repellendus?"
+        "title": "Power Outages",
+        "image": "https://opengraph.githubassets.com/1/khraghuvanshi/power_outages",
+        "description": "The project analyses the data of major power outages in the US from January 2000 to July 2006."
     },
     {
-        "title": "Accusantium ut iste provident.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Odit porro, veritatis dolorum eos beatae fugit facere itaque, quod laboriosam nulla harum at tempore ipsam dolores! Illo sequi vitae provident. Vitae repellat accusantium eius! Mollitia molestiae fugit neque quibusdam."
+        "title": "Ship Survival: Titanic, Lusitania, and Estonia",
+        "image": "https://opengraph.githubassets.com/1/COGS108/Group51_SP24",
+        "description": "This project focuses on understanding the differences between the demographics of the individuals who survived or failed to survive the sinking of 3 passenger ships; the Titanic, the RMS Lusitania, and the MS Estonia; and how they differed between the different ships."
     },
     {
-        "title": "Necessitatibus tenetur aut eligendi.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Maxime, explicabo? Obcaecati adipisci, blanditiis reprehenderit, animi nihil possimus quae dignissimos consectetur vero est velit, nam atque provident quisquam voluptas quas natus doloremque minus. Recusandae voluptatem quibusdam ea iste dolorem."
+        "title": "KNN Classifier",
+        "image": "https://opengraph.githubassets.com/1/khraghuvanshi/KNN-classifier",
+        "description": "The Classifier determines if the picture given is a Daytime picture or a Nighttime picture based on the data fed to it."
     },
     {
         "title": "Eligendi dolor fugiat voluptatem!",
