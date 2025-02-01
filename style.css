@@ -188,24 +188,38 @@ time {
   border-radius: 5px;
 }
 
+/* Center the entire GitHub Stats section */
+#profile-stats {
+  text-align: center;
+  margin: 40px auto;
+  max-width: 800px;
+}
+
+/* Create a responsive 4-column grid */
 #profile-stats dl {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
-  gap: 10px; /* Space between grid items */
+  gap: 20px;
   text-align: center;
-  max-width: 600px; /* Adjust width as needed */
-  margin: auto; /* Center the grid */
+  max-width: 800px;
+  margin: auto;
 }
 
+/* Style the labels (dt) */
 #profile-stats dt {
-  grid-row: 1; /* Place all <dt> in the first row */
+  grid-row: 1; /* All <dt> elements stay in row 1 */
+  font-size: 12px;
   font-weight: bold;
-  color: #333;
+  color: #6c757d; /* Light gray color */
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
+/* Style the values (dd) */
 #profile-stats dd {
-  grid-row: 2; /* Place all <dd> in the second row */
+  grid-row: 2; /* All <dd> elements stay in row 2 */
+  font-size: 24px;
+  font-weight: bold;
+  color: #000; /* Black text */
   margin: 0;
-  font-size: 1.1em;
-  color: #666;
 }
