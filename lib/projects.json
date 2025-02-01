@@ -1,12 +1,12 @@
 [
     {
         "title": "PCA Spotify Music Recommendation",
-        "image": "https://github.com/ebeltyukova/PCA_for_Spotify_Recs.git",
+        "image": "https://raw.githubusercontent.com/ebeltyukova/PCA_for_Spotify_Recs/main/screenshot.png",
         "description": "This project is a Music Recommendation System designed to provide personalized song recommendations based on input criteria. Users can specify the name of a song, the artist, and their preferences for features such as danceability, loudness, and instrumentalness."
     },
     {
         "title": "Classifier Evaluations",
-        "image": "../images/proj2",
+        "image": "../images/proj2.png",
         "description": "This project compares the performance of six supervised learning classifiers—Random Forest, Decision Tree, K-Nearest Neighbors (KNN), Naive Bayes, Support Vector Machine (SVM), and Logistic Regression—on binary classification tasks using three datasets from the UCI Machine Learning Repository."
     },
     {
