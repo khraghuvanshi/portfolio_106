@@ -1,7 +1,7 @@
 [
     {
         "title": "PCA Spotify Music Recommendation",
-        "image": "https://raw.githubusercontent.com/ebeltyukova/PCA_for_Spotify_Recs/main/screenshot.png",
+        "image": "../images/proj1.png",
         "description": "This project is a Music Recommendation System designed to provide personalized song recommendations based on input criteria. Users can specify the name of a song, the artist, and their preferences for features such as danceability, loudness, and instrumentalness."
     },
     {

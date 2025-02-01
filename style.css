@@ -5,6 +5,17 @@ html {
 }
 
 @media (prefers-color-scheme: dark) {
+
+  :root {
+    --text-primary: #ffffff; /* White text */
+    --text-secondary: #b0b3b8; /* Lighter gray for labels */
+    --bg-primary: #181818; /* Dark background */
+  }
+
+  #profile-stats {
+    background: var(--bg-primary); /* Ensure the section changes color */
+  }
+
   nav {
     border-bottom-width: 1px;
     border-bottom-style: solid;
