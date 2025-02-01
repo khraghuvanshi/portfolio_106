@@ -99,6 +99,13 @@ button {
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
   gap: 1em; 
 }
+
+.projects img {
+  max-width: 100%;  /* Ensures images do not overflow their container */
+  height: auto;      /* Maintains aspect ratio */
+  object-fit: cover; /* Prevents stretching */
+  border-radius: 8px; /* Rounds image corners */
+}
 section{
   grid-template-rows: subgrid;
   grid-row: span 3;
