@@ -1,61 +1,73 @@
 [
     {
         "title": "PCA Spotify Music Recommendation",
+        "year": "2025",
         "image": "https://opengraph.githubassets.com/1/ebeltyukova/PCA_for_Spotify_Recs",
         "description": "This project is a Music Recommendation System designed to provide personalized song recommendations based on input criteria. Users can specify the name of a song, the artist, and their preferences for features such as danceability, loudness, and instrumentalness."
     },
     {
         "title": "Classifier Evaluations",
+        "year": "2024",
         "image": "https://opengraph.githubassets.com/1/khraghuvanshi/classifier_evaluations",
         "description": "This project compares the performance of six supervised learning classifiers—Random Forest, Decision Tree, K-Nearest Neighbors (KNN), Naive Bayes, Support Vector Machine (SVM), and Logistic Regression—on binary classification tasks using three datasets from the UCI Machine Learning Repository."
     },
     {
         "title": "Power Outages",
+        "year": "2024",
         "image": "https://opengraph.githubassets.com/1/khraghuvanshi/power_outages",
         "description": "The project analyses the data of major power outages in the US from January 2000 to July 2006."
     },
     {
         "title": "Ship Survival: Titanic, Lusitania, and Estonia",
+        "year": "2023",
         "image": "https://opengraph.githubassets.com/1/COGS108/Group51_SP24",
         "description": "This project focuses on understanding the differences between the demographics of the individuals who survived or failed to survive the sinking of 3 passenger ships; the Titanic, the RMS Lusitania, and the MS Estonia; and how they differed between the different ships."
     },
     {
         "title": "KNN Classifier",
+        "year": "2023",
         "image": "https://opengraph.githubassets.com/1/khraghuvanshi/KNN-classifier",
         "description": "The Classifier determines if the picture given is a Daytime picture or a Nighttime picture based on the data fed to it."
     },
     {
-        "title": "Eligendi dolor fugiat voluptatem!",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Molestiae magnam non exercitationem error. Blanditiis dolor ipsam tenetur provident natus veritatis officiis, quas excepturi ipsum eos aliquam aut alias quos ipsa mollitia iusto? Temporibus explicabo ducimus voluptatem illo inventore?"
+        "title": "British Bakeoff Analysis",
+        "year": "2022",
+        "image": "https://opengraph.githubassets.com/1/khraghuvanshi/british-bakeoff-analysis",
+        "description": "Carried out data analysis on Data Frames about the show British Bakeoff. Established relationships between variables using permutation testing, regression, hypothesis testing, bootstrapping, and data visualization"
     },
     {
-        "title": "Incidunt quis repellendus quasi.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Incidunt reprehenderit quaerat eos reiciendis ipsum ad praesentium inventore quis voluptate consectetur molestias quidem, possimus recusandae eaque repudiandae consequatur officia quam dolores delectus ratione, fugiat voluptatum asperiores, accusantium saepe! Asperiores."
+        "title": "Dicegame",
+        "year": "2022",
+        "image": "https://opengraph.githubassets.com/1/khraghuvanshi/dicegame",
+        "description": "It's a computer/ webpage game where the user specifies the number of times they want to play as input and it gives the money they win or lose as output."
     },
     {
-        "title": "Magni voluptatem deserunt esse.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Odio officiis fuga architecto culpa adipisci laborum tenetur, deserunt corrupti delectus quae maxime autem, enim soluta quasi ipsa iste deleniti in dolorem temporibus dignissimos facere alias doloremque reiciendis nostrum. Velit."
+        "title": "Wedding Planner",
+        "year": "2022",
+        "image": "https://opengraph.githubassets.com/1/khraghuvanshi/weddingplanner",
+        "description": "The program takes user's input on the number of guests and number of table they want at their wedding and give an evenly distributed seating arrangement."
     },
     {
         "title": "Architecto nulla quod iure.",
+        "year": "2021",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Esse exercitationem repellat consequuntur hic, aut voluptatum? Nemo laborum adipisci voluptas, eligendi iste dolor iure! Quae officia perspiciatis, cupiditate, accusantium cumque inventore sapiente maiores, ad sit doloremque sunt facilis quibusdam?"
     },
     {
         "title": "Dolorum cum architecto autem!",
+        "year": "2021",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Nulla cupiditate mollitia atque corporis eveniet tempora ipsam, reprehenderit nisi earum libero quod molestias corrupti incidunt numquam animi nesciunt maxime veniam rerum! Labore ducimus in suscipit veniam, ullam nisi dolorem!"
     },
     {
         "title": "Officiis libero quos voluptatibus?",
+        "year": "2021",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Optio ab deserunt tempore esse quo sequi similique veniam nemo obcaecati laborum, minima asperiores porro reiciendis autem nostrum eligendi, ex ratione perferendis eaque omnis non assumenda totam. Similique, rerum vitae."
     },
     {
         "title": "Tenetur fugit eum repellat.",
+        "year": "2021",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Voluptatum ad sint libero voluptatibus provident blanditiis similique nobis molestias, nisi atque unde, repellat ratione quae alias fuga, minima voluptatem aliquam maiores quos. Totam quasi adipisci ab numquam? Quia, ea."
     }
