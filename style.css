@@ -187,3 +187,25 @@ time {
   font-family: inherit;
   border-radius: 5px;
 }
+
+#profile-stats dl {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  gap: 10px; /* Space between grid items */
+  text-align: center;
+  max-width: 600px; /* Adjust width as needed */
+  margin: auto; /* Center the grid */
+}
+
+#profile-stats dt {
+  grid-row: 1; /* Place all <dt> in the first row */
+  font-weight: bold;
+  color: #333;
+}
+
+#profile-stats dd {
+  grid-row: 2; /* Place all <dd> in the second row */
+  margin: 0;
+  font-size: 1.1em;
+  color: #666;
+}
