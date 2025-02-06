@@ -122,8 +122,8 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
       <${headingLevel}>${title}</${headingLevel}>
       ${image}
       <div class = "project-info">
+        ${year}
         <p>${description}</p>
-        Completed:${year}
       </div>
     `;
 
