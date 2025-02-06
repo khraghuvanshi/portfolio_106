@@ -123,7 +123,7 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
       ${image}
       <div class = "project-info">
         <p>${description}</p>
-        ${year}
+        Completed:${year}
       </div>
     `;
 
