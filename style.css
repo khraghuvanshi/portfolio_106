@@ -234,3 +234,10 @@ time {
   color: #5386c6; /* Black text */
   margin: 0;
 }
+
+#projects-plot {
+  max-width: 20em;
+  margin-block: 2em;
+
+  overflow: visible;
+}
