@@ -23,7 +23,8 @@ let arcGenerator = d3.arc().innerRadius(0).outerRadius(50);
 
 // const svg = d3.select('svg')//.append('path').attr('d', arc).attr('fill', 'red');
 
-let data = [1, 2];
+let data = [1, 2, 3, 4, 5, 5];
+let sliceGenerator = d3.pie();
 let total = data.reduce((sum, d) => sum + d, 0);
 
 for (let d of data) {
@@ -31,7 +32,7 @@ for (let d of data) {
 }
 
 let angle = 0;
-let arcData = [];
+let arcData = sliceGenerator(data);//[];
 
 for (let d of data) {
   let endAngle = angle + (d / total) * 2 * Math.PI;
