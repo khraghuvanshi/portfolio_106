@@ -241,3 +241,33 @@ time {
 
   overflow: visible;
 }
+
+.legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr)); /* Auto-fill layout */
+  gap: 1em; /* Space between items */
+  border: 2px solid #ccc; /* Border around the whole legend */
+  padding: 1em; /* Padding inside the legend */
+  margin: 2em 0; /* Margin outside the legend */
+}
+
+/* Styling each legend item */
+.legend-item {
+  display: flex;
+  align-items: center; /* Vertically center the swatch and text */
+  gap: 0.5em; /* Space between the swatch and the text */
+}
+
+/* Styling the swatch (color box) */
+.swatch {
+  display: inline-block; /* So it can have width and height */
+  width: 1em; /* Square shape */
+  height: 1em; /* Square shape */
+  background-color: var(--color); /* Use the dynamic color */
+  border-radius: 50%; /* Round corners to make it a circle */
+}
+
+/* Optional: Style the text */
+.legend-item span {
+  font-size: 1em;
+}
