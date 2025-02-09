@@ -22,18 +22,20 @@ let rolledData = d3.rollups(
     (d) => d.year,
   );
 
-let sliceGenerator = d3.pie().value((d) => d.value);
-let total = 0;//data.reduce((sum, d) => sum + d, 0);
-
 let data = rolledData.map(([year, count]) => {
     return { value: count, label: year };
   });
 
-for (let d of data) {
-  total += d;
-}
+let sliceGenerator = d3.pie().value((d) => d.value);
+// let total = 0;//data.reduce((sum, d) => sum + d, 0);
 
-let angle = 0;
+
+
+// for (let d of data) {
+//   total += d;
+// }
+
+// let angle = 0;
 let arcData = sliceGenerator(data);//[];
 
 for (let d of data) {
