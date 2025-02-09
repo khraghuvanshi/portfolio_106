@@ -242,10 +242,24 @@ time {
   overflow: visible;
 }
 
+.container {
+  display: flex;        
+  gap: 2em;             
+  align-items: center;  
+  flex-wrap: wrap;     
+}
+
+/* Styling the pie chart container */
+.container svg {
+  width: 200px;         
+  height: 200px;        
+}
+
 .legend {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(9em, 1fr)); 
   gap: 1em; 
+  flex: 1; 
   border: 2px solid #ccc; 
   padding: 1em; 
   margin: 2em 0; 
