@@ -9,6 +9,8 @@ const searchInput = document.querySelector('.searchBar');
 const svg = d3.select('svg');
 const legend = d3.select('.legend');
 
+let selectedIndex = -1; // No wedge selected initially
+
 renderProjects(projects, projectsContainer, 'h2');
 projectsTitle.innerHTML = `Here are my <span>${projects.length}</span> projects`;
 
@@ -38,19 +40,43 @@ function renderPieChart(projectsGiven) {
     let colors = d3.scaleOrdinal(d3.schemeTableau10);
 
     // Append paths for pie chart
-    arcData.forEach((d, idx) => {
-        svg.append('path')
-            .attr('d', arcGenerator(d))
-            .attr('fill', colors(idx));
-    });
+    svg.selectAll('path')
+        .data(arcData)
+        .enter()
+        .append('path')
+        .attr('d', arcGenerator)
+        .attr('fill', (d, idx) => colors(idx))
+        .attr('class', (d, idx) => selectedIndex === idx ? 'selected' : '')
+        .style('cursor', 'pointer')
+        .on('click', (event, d) => {
+            selectedIndex = selectedIndex === d.index ? -1 : d.index;
+
+            // Update paths to highlight selection
+            svg.selectAll('path')
+                .attr('class', (_, idx) => (selectedIndex === idx ? 'selected' : ''));
+
+            // Update legend to highlight selection
+            legend.selectAll('li')
+                .attr('class', (_, idx) => (selectedIndex === idx ? 'selected' : ''));
+
+            // Filter projects by selected year if one is selected
+            if (selectedIndex === -1) {
+                renderProjects(projects, projectsContainer, 'h2');
+            } else {
+                let selectedYear = data[selectedIndex].label;
+                let filteredProjects = projects.filter(p => p.year === selectedYear);
+                renderProjects(filteredProjects, projectsContainer, 'h2');
+            }
+        });
 
     // Update legend
-    data.forEach((d, idx) => {
-        legend.append('li')
-            .attr('class', 'legend-item')
-            .attr('style', `--color:${colors(idx)}`)
-            .html(`<span class="swatch"></span> ${d.label} <em>(${d.value})</em>`);
-    });
+    legend.selectAll('li')
+        .data(data)
+        .enter()
+        .append('li')
+        .attr('class', (d, idx) => selectedIndex === idx ? 'selected' : '')
+        .attr('style', (d, idx) => `--color:${colors(idx)}`)
+        .html(d => `<span class="swatch"></span> ${d.label} <em>(${d.value})</em>`);
 }
 
 // Initial render of pie chart
