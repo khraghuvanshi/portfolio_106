@@ -60,3 +60,19 @@ data.forEach((d, idx) => {
         .attr('style', `--color:${colors(idx)}`) // set the style attribute while passing in parameters
         .html(`<span class="swatch"></span> ${d.label} <em>(${d.value})</em>`); // set the inner html of <li>
 })
+
+let query = '';
+
+let searchInput = document.querySelector('.searchBar');
+
+searchInput.addEventListener('change', (event) => {
+  // update query value
+  query = event.target.value.toLowerCase();
+  // TODO: filter the projects
+  let filteredProjects = projects.filter((project) =>
+    project.title.toLowerCase().includes(query) || project.description.toLowerCase().includes(query)
+  );
+
+  // TODO: render updated projects!
+  renderProjects(filteredProjects);
+});
