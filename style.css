@@ -254,8 +254,10 @@ time {
 /* Styling each legend item */
 .legend-item {
   display: flex;
-  align-items: center; /* Vertically center the swatch and text */
-  gap: 0.5em; /* Space between the swatch and the text */
+  align-items: center; 
+  justify-content: center;
+  gap: 0.5em;
+  text-align: center;
 }
 
 /* Styling the swatch (color box) */
