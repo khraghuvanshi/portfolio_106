@@ -272,4 +272,6 @@ time {
 /* Optional: Style the text */
 .legend-item span {
   font-size: 1em;
+  display: inline-block; 
+  vertical-align: middle;
 }
