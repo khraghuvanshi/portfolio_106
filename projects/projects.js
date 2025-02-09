@@ -55,7 +55,7 @@ let colors = d3.scaleOrdinal(d3.schemeTableau10);
 arcs.forEach((arc, idx) => {
     d3.select('svg')
       .append('path')
-      .attr('d', arcGenerator(arc))
+      .attr('d', arc)
       .attr('fill', colors(idx)) // Fill in the attribute for fill color via indexing the colors variable
 })
 
