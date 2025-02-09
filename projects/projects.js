@@ -73,7 +73,7 @@ function updateFilteredProjects() {
 
   // Apply year filter (only if a slice is selected)
   if (selectedIndex !== -1) {
-    let selectedYear = d3.pie().value(d => d.value)(projects)[selectedIndex].data.label;
+    let selectedYear = arcData[selectedIndex].data.label;//d3.pie().value(d => d.value)(projects)[selectedIndex].data.label;
     filteredProjects = filteredProjects.filter((project) => project.year === selectedYear);
   }
 
