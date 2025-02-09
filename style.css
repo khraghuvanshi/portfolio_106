@@ -246,7 +246,7 @@ time {
   display: flex;        
   gap: 2em;             
   align-items: center;  
-  flex-wrap: wrap;     
+  flex-wrap: wrap;    
 }
 
 /* Styling the pie chart container */
@@ -287,5 +287,5 @@ time {
 .legend-item span {
   font-size: 1em;
   display: inline-block; 
-  vertical-align: middle;
+   /* vertical-align: middle; */
 }
