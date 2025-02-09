@@ -1,76 +1,72 @@
 import { fetchJSON, renderProjects } from '../global.js';
+import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm";
 
 const projects = await fetchJSON('../lib/projects.json');
 
 const projectsContainer = document.querySelector('.projects');
 const projectsTitle = document.querySelector('.projects-title');
 const searchInput = document.querySelector('.searchBar');
-const svg = d3.select('svg');  // Select the SVG for pie chart
-const legendContainer = d3.select('.legend'); // Select the legend container
+const svg = d3.select('svg');
+const legend = d3.select('.legend');
 
-// Display all projects initially
 renderProjects(projects, projectsContainer, 'h2');
 projectsTitle.innerHTML = `Here are my <span>${projects.length}</span> projects`;
 
-// Function to render the pie chart based on visible projects
 function renderPieChart(projectsGiven) {
-  // Clear previous paths and legends before re-rendering
-  svg.selectAll('path').remove();
-  legendContainer.selectAll('li').remove();
+    // Clear previous pie chart and legend
+    svg.selectAll('path').remove();
+    legend.selectAll('li').remove();
 
-  // Recalculate rolled data (group by year and count projects per year)
-  let newRolledData = d3.rollups(
-    projectsGiven,
-    (v) => v.length,
-    (d) => d.year
-  );
+    // Recalculate rolled data
+    let rolledData = d3.rollups(
+        projectsGiven,
+        (v) => v.length,
+        (d) => d.year
+    );
 
-  // Transform rolled data into pie chart format
-  let newData = newRolledData.map(([year, count]) => ({
-    value: count,
-    label: year
-  }));
+    // Recalculate data
+    let data = rolledData.map(([year, count]) => ({
+        value: count,
+        label: year
+    }));
 
-  // Recalculate pie chart slices
-  let sliceGenerator = d3.pie().value(d => d.value);
-  let arcData = sliceGenerator(newData);
-  let arcGenerator = d3.arc().innerRadius(0).outerRadius(50);
-  let colors = d3.scaleOrdinal(d3.schemeTableau10);
+    let total = data.reduce((sum, d) => sum + d.value, 0);
 
-  // Attach new pie slices
-  arcData.forEach((arc, idx) => {
-    svg.append('path')
-      .attr('d', arcGenerator(arc))
-      .attr('fill', colors(idx));
-  });
+    let sliceGenerator = d3.pie().value(d => d.value);
+    let arcData = sliceGenerator(data);
+    let arcGenerator = d3.arc().innerRadius(0).outerRadius(50);
+    let colors = d3.scaleOrdinal(d3.schemeTableau10);
 
-  // Update legend
-  newData.forEach((d, idx) => {
-    legendContainer.append('li')
-      .attr('class', 'legend-item')
-      .attr('style', `--color:${colors(idx)}`)
-      .html(`<span class="swatch"></span> ${d.label} <em>(${d.value})</em>`);
-  });
+    // Append paths for pie chart
+    arcData.forEach((d, idx) => {
+        svg.append('path')
+            .attr('d', arcGenerator(d))
+            .attr('fill', colors(idx));
+    });
+
+    // Update legend
+    data.forEach((d, idx) => {
+        legend.append('li')
+            .attr('class', 'legend-item')
+            .attr('style', `--color:${colors(idx)}`)
+            .html(`<span class="swatch"></span> ${d.label} <em>(${d.value})</em>`);
+    });
 }
 
-// Initial render: Display all projects and their corresponding pie chart
+// Initial render of pie chart
 renderPieChart(projects);
 
-// Search bar event listener
-searchInput.addEventListener('input', (event) => {
-  let query = event.target.value.toLowerCase();
+searchInput.addEventListener('change', (event) => {
+    let query = event.target.value.toLowerCase();
 
-  // Filter projects based on search query
-  let filteredProjects = projects.filter((project) => {
-    let values = Object.values(project).join('\n').toLowerCase();
-    return values.includes(query);
-  });
+    let filteredProjects = projects.filter((project) => {
+        let values = Object.values(project).join('\n').toLowerCase();
+        return values.includes(query);
+    });
 
-  // Update project display
-  renderProjects(filteredProjects, projectsContainer, 'h2');
-
-  // Update pie chart and legend dynamically
-  renderPieChart(filteredProjects);
+    // Re-render filtered projects and update pie chart
+    renderProjects(filteredProjects, projectsContainer, 'h2');
+    renderPieChart(filteredProjects);
 });
 
 
@@ -87,7 +83,6 @@ searchInput.addEventListener('input', (event) => {
 // // projectsTitle.textContent = `Here are my ${projects.length} projects`;
 
 // import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm";
-
 
 // const svg = d3.select('svg')
 
