@@ -289,3 +289,31 @@ time {
   display: inline-block; 
    /* vertical-align: middle; */
 }
+
+/* Step 5.1: Highlight hovered wedge */
+svg:has(path:hover) path:not(:hover) {
+  opacity: 0.5;
+}
+
+/* Smooth transition for hover effect */
+path {
+  transition: 300ms;
+  cursor: pointer;
+}
+
+/* Step 5.2: Highlight selected wedge */
+.selected {
+  --color: oklch(60% 45% 0) !important;
+}
+
+/* Change fill color of selected wedge */
+.selected:is(path) {
+  fill: var(--color);
+}
+
+/* Highlight selected legend item */
+.selected:is(li) {
+  font-weight: bold;
+  color: var(--color);
+}
+
