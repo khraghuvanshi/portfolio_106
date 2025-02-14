@@ -9,6 +9,8 @@ async function loadData() {
         date: new Date(row.date + 'T00:00' + row.timezone),
         datetime: new Date(row.datetime),
       }));
+
+    displayStats();
 }
 
 function processCommits() {
