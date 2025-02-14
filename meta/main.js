@@ -45,6 +45,45 @@ function processCommits() {
       });
     }
 
+function displayStats() {
+  processCommits(); // Process commit data
+
+  const dl = d3.select('#stats').append('dl').attr('class', 'stats');
+
+  // Total Lines of Code
+  dl.append('dt').html('Total <abbr title="Lines of code">LOC</abbr>');
+  dl.append('dd').text(data.length);
+
+  // Total Commits
+  dl.append('dt').text('Total commits');
+  dl.append('dd').text(commits.length);
+
+  // Number of Files
+  const numFiles = d3.group(data, (d) => d.file).size;
+  dl.append('dt').text('Total files');
+  dl.append('dd').text(numFiles);
+
+  // Maximum File Length
+  const maxFileLength = d3.max(data, (d) => d.line);
+  dl.append('dt').text('Longest file (in lines)');
+  dl.append('dd').text(maxFileLength);
+
+  // Average File Length
+  const fileLengths = d3.rollups(
+    data,
+    (v) => d3.max(v, (d) => d.line),
+    (d) => d.file
+  );
+  const avgFileLength = d3.mean(fileLengths, (d) => d[1]);
+  dl.append('dt').text('Average file length (in lines)');
+  dl.append('dd').text(avgFileLength.toFixed(2));
+
+  // Deepest Line
+  const maxDepth = d3.max(data, (d) => d.depth);
+  dl.append('dt').text('Maximum depth');
+  dl.append('dd').text(maxDepth);
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
   await loadData();
 });
