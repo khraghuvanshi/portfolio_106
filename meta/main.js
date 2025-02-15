@@ -12,6 +12,7 @@ async function loadData() {
       }));
     processCommits();
     displayStats();
+    createScatterplot();
 }
 
 function processCommits() {
