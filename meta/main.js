@@ -86,6 +86,8 @@ function displayStats() {
   dl.append('dd').text(maxDepth);
 }
 
+let xScale, yScale, brushSelection = null;
+
 function createScatterplot() {
     const width = 1000;
     const height = 600;
@@ -159,8 +161,8 @@ function createScatterplot() {
             updateTooltipPosition(event);
         });
 
-        const xAxis = d3.axisBottom(xScale);
-        const yAxis = d3.axisLeft(yScale);
+    const xAxis = d3.axisBottom(xScale);
+    const yAxis = d3.axisLeft(yScale);
     
         // Add X axis
     svg
@@ -173,6 +175,83 @@ function createScatterplot() {
         .append('g')
         .attr('transform', `translate(${usableArea.left}, 0)`)
         .call(yAxis);
+
+    brushSelector(svg);
+}
+
+function brushSelector(svg) {
+    const brush = d3.brush()
+        .on('start brush end', brushed);
+
+    svg.call(brush);
+
+    // Raise dots above the brush overlay
+    svg.selectAll('.dots, .overlay ~ *').raise();
+}
+
+// Brushing event handler
+function brushed(event) {
+    brushSelection = event.selection;
+    updateSelection();
+}
+
+// Check if commit is within the brush selection
+function isCommitSelected(commit) {
+    if (!brushSelection) return false;
+
+    const min = { x: brushSelection[0][0], y: brushSelection[0][1] };
+    const max = { x: brushSelection[1][0], y: brushSelection[1][1] };
+    const x = xScale(commit.datetime);
+    const y = yScale(commit.hourFrac);
+
+    return x >= min.x && x <= max.x && y >= min.y && y <= max.y;
+}
+
+// Update selected dots and stats
+function updateSelection() {
+    d3.selectAll('circle').classed('selected', (d) => isCommitSelected(d));
+    updateSelectionCount();
+    updateLanguageBreakdown();
+}
+
+// Update the selection count
+function updateSelectionCount() {
+    const selectedCommits = brushSelection ? commits.filter(isCommitSelected) : [];
+    const countElement = document.getElementById('selection-count');
+    countElement.textContent = `${selectedCommits.length || 'No'} commits selected`;
+}
+
+// Update the language breakdown
+function updateLanguageBreakdown() {
+    const selectedCommits = brushSelection ? commits.filter(isCommitSelected) : [];
+    const container = document.getElementById('language-breakdown');
+
+    if (selectedCommits.length === 0) {
+        container.innerHTML = '';
+        return;
+    }
+
+    const requiredCommits = selectedCommits.length ? selectedCommits : commits;
+    const lines = requiredCommits.flatMap((d) => d.lines);
+
+    // Count lines per language
+    const breakdown = d3.rollup(
+        lines,
+        (v) => v.length,
+        (d) => d.type
+    );
+
+    container.innerHTML = '';
+
+    for (const [language, count] of breakdown) {
+        const proportion = count / lines.length;
+        const formatted = d3.format('.1~%')(proportion);
+
+        container.innerHTML += `
+            <dt>${language}</dt>
+            <dd>${count} lines (${formatted})</dd>
+        `;
+    }
 }
 
 function updateTooltipContent(commit) {
