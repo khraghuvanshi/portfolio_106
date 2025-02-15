@@ -117,12 +117,12 @@ function createScatterplot() {
     const yScale = d3.scaleLinear().domain([0, 24]).range([height, 0]);
 
     const gridlines = svg
-  .append('g')
-  .attr('class', 'gridlines')
-  .attr('transform', `translate(${usableArea.left}, 0)`);
+        .append('g')
+        .attr('class', 'gridlines')
+        .attr('transform', `translate(${usableArea.left}, 0)`);
 
 // Create gridlines as an axis with no labels and full-width ticks
-gridlines.call(d3.axisLeft(yScale).tickFormat('').tickSize(-usableArea.width));
+    gridlines.call(d3.axisLeft(yScale).tickFormat('').tickSize(-usableArea.width));
 
     // Draw Dots
     const dots = svg.append('g').attr('class', 'dots');
