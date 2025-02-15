@@ -223,7 +223,9 @@ function updateSelectionCount() {
 
 // Update the language breakdown
 function updateLanguageBreakdown() {
-    const selectedCommits = brushSelection ? commits.filter(isCommitSelected) : [];
+    const selectedCommits = brushSelection 
+    ? commits.filter(isCommitSelected) 
+    : [];
     const container = document.getElementById('language-breakdown');
 
     if (selectedCommits.length === 0) {
