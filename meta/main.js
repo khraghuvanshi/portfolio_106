@@ -89,6 +89,16 @@ function displayStats() {
 function createScatterplot() {
     const width = 1000;
     const height = 600;
+    const margin = { top: 10, right: 10, bottom: 30, left: 40 };
+
+    const usableArea = {
+        top: margin.top,
+        right: width - margin.right,
+        bottom: height - margin.bottom,
+        left: margin.left,
+        width: width - margin.left - margin.right,
+        height: height - margin.top - margin.bottom,
+      };
 
     const svg = d3
         .select('#chart')
@@ -100,7 +110,7 @@ function createScatterplot() {
     const xScale = d3
         .scaleTime()
         .domain(d3.extent(commits, (d) => d.datetime))
-        .range([0, width])
+        .range([usableArea.left, usableArea.right])
         .nice();
 
     // Y Scale: Linear Scale for Hour Fraction
@@ -117,6 +127,21 @@ function createScatterplot() {
         .attr('cy', (d) => yScale(d.hourFrac))
         .attr('r', 5)
         .attr('fill', 'steelblue');
+
+        const xAxis = d3.axisBottom(xScale);
+        const yAxis = d3.axisLeft(yScale);
+    
+        // Add X axis
+    svg
+        .append('g')
+        .attr('transform', `translate(0, ${usableArea.bottom})`)
+        .call(xAxis);
+    
+        // Add Y axis
+    svg
+        .append('g')
+        .attr('transform', `translate(${usableArea.left}, 0)`)
+        .call(yAxis);
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
