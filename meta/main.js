@@ -1,5 +1,5 @@
 let data = [];
-let commits = [];
+let commits = d3.groups(data, (d) => d.commit);
 
 async function loadData() {
     data = await d3.csv('loc.csv', (row) => ({
