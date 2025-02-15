@@ -318,17 +318,40 @@ path {
 }
 
 .stats {
-  display: grid;
+  /* display: grid;
   grid-template-columns: max-content auto;
-  gap: 0.5rem 1rem;
+  gap: 0.5rem 1rem; */
+  text-align: center;
+  margin: 40px auto;
+  max-width: 800px;
 }
 
 .stats dt {
+  /* font-weight: bold; */
+  grid-row: 1; /* All <dt> elements stay in row 1 */
+  font-size: 12px;
   font-weight: bold;
+  color: #6c757d; /* Light gray color */
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .stats dd {
+  /* margin: 0; */
+  grid-row: 2; /* All <dd> elements stay in row 2 */
+  font-size: 24px;
+  font-weight: bold;
+  color: #5386c6; /* Black text */
   margin: 0;
+}
+
+.stats dl {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  gap: 20px;
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
 }
 
 

@@ -49,7 +49,7 @@ function processCommits() {
 function displayStats() {
   processCommits(); // Process commit data
 
-  const dl = d3.select('#profile-stats').append('dl').attr('class', 'stats');
+  const dl = d3.select('#stats').append('dl').attr('class', 'stats');
 
   // Total Lines of Code
   dl.append('dt').html('Total <abbr title="Lines of code">LOC</abbr>');
