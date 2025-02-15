@@ -256,6 +256,8 @@ function updateLanguageBreakdown() {
             <dd>${count} lines (${formatted})</dd>
         `;
     }
+
+    return breakdown
 }
 
 function updateTooltipContent(commit) {
