@@ -149,11 +149,13 @@ function createScatterplot() {
         .attr('fill', 'steelblue')
         .style('fill-opacity', 0.7)
         .on('mouseenter', (event, commit) => {
+            d3.select(event.currentTarget).style('fill-opacity', 1);
             updateTooltipContent(commit);
             updateTooltipVisibility(true);
             updateTooltipPosition(event);
         })
         .on('mouseleave', () => {
+            d3.select(event.currentTarget).style('fill-opacity', 0.7);
             updateTooltipContent({});
             updateTooltipVisibility(false);
         })
